@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[HomeViewController tableView:cellForRowAtIndexPath:]:HomeViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((UIImageView*)[[productScrollView subviews] objectAtIndex:0]).image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ShoppingCartViewController tableView:cellForRowAtIndexPath:]:ShoppingCartViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selView">
+            </PersistentString>
+            <PersistentString
+               value = "selView.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ExperienceViewController imageviewTouchEvents:]:ExperienceViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selIV.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductDetailViewController doAddToCartAnimal]:ProductDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectButImg.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductDetailViewController initTableHeader:]:ProductDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.image.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductPopCommonOptionListView tableView:didSelectRowAtIndexPath:]:ProductPopCommonOptionListView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "iconView.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductPopCommonOptionListView tableView:cellForRowAtIndexPath:]:ProductPopCommonOptionListView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "iconView.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

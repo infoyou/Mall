@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="4001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq9-6D-XIc">
+                        <rect key="frame" x="10" y="11" width="145" height="36"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.27450980392156865" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="    立即购买">
+                            <color key="titleColor" red="0.9882352941176471" green="1" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.98823529409999999" green="1" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon52.png" translatesAutoresizingMaskIntoConstraints="NO" id="VNL-3e-sIg">
+                        <rect key="frame" x="26" y="17" width="22" height="23"/>
+                    </imageView>
+                    <button opaque="NO" tag="4003" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BA-9j-sx9">
+                        <rect key="frame" x="10" y="54" width="145" height="36"/>
+                        <color key="backgroundColor" red="0.23921568627450981" green="0.5607843137254902" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="     加入购物车">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shopCart.png" translatesAutoresizingMaskIntoConstraints="NO" id="bw0-1r-s8d">
+                        <rect key="frame" x="26" y="60" width="22" height="23"/>
+                    </imageView>
+                    <button opaque="NO" tag="4002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrY-eN-i7d">
+                        <rect key="frame" x="168" y="11" width="145" height="36"/>
+                        <color key="backgroundColor" red="1" green="0.51764705882352946" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="   立即收藏">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" red="0.98823529409999999" green="1" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon53.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyx-qx-nZ9">
+                        <rect key="frame" x="183" y="16" width="22" height="24"/>
+                    </imageView>
+                    <button opaque="NO" tag="4004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyp-wR-Nae">
+                        <rect key="frame" x="168" y="54" width="145" height="36"/>
+                        <color key="backgroundColor" red="0.31764705882352939" green="0.66274509803921566" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="   预约体验">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" red="0.98823529409999999" green="1" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon54.png" translatesAutoresizingMaskIntoConstraints="NO" id="tA5-Gd-u9D">
+                        <rect key="frame" x="183" y="60" width="22" height="23"/>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon52.png" width="28" height="30"/>
+        <image name="icon53.png" width="28" height="30"/>
+        <image name="icon54.png" width="28" height="30"/>
+        <image name="shopCart.png" width="28" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
