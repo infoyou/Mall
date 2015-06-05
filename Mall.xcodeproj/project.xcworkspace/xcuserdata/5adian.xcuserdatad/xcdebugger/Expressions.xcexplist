@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "__53-[SettingViewController postImageMehtod:imgNamePath:]_block_invoke:SettingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageToPost">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[HomeViewController tableView:cellForRowAtIndexPath:]:HomeViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -26,6 +34,14 @@
          <PersistentStrings>
             <PersistentString
                value = "selIV.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProfileViewController initTabHeadView]:ProfileViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "avator.image">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

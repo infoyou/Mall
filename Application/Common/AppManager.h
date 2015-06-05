@@ -39,6 +39,11 @@
                 userName:(NSString *)aUserName
                 nickName:(NSString *)aNickName
                   avator:(NSString *)avator
-                   point:(NSString *)point;
+                   point:(NSString *)aPoint
+                  mobile:(NSString *)aMobile
+                    pswd:(NSString *)aPswd;
+
+- (void)updateUserData:(NSString *)aUserId
+                  pswd:(NSString *)aPswd;
 
 @end

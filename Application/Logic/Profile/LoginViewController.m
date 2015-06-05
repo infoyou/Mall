@@ -144,6 +144,7 @@
                                              [AppManager instance].userName = [userDict valueForKey:@"member_name"];
                                              [AppManager instance].userNickName = [userDict valueForKey:@"nick_name"];
                                              [AppManager instance].userMobile = [userDict valueForKey:@"mobile"];
+                                             [AppManager instance].userPswd = pswdTxt.text;
                                              [AppManager instance].userPoint = [userDict valueForKey:@"point"];
                                              [AppManager instance].userDefaultAddress = [userDict valueForKey:@"default_address"];
                                              [AppManager instance].userProvince = [userDict valueForKey:@"province"];
@@ -157,7 +158,9 @@
                                                                             userName:[AppManager instance].userName
                                                                             nickName:[AppManager instance].userNickName
                                                                               avator:[AppManager instance].userImageUrl
-                                                                               point:[AppManager instance].userPoint];
+                                                                               point:[AppManager instance].userPoint
+                                                                              mobile:[AppManager instance].userMobile
+                                                                                pswd:[AppManager instance].userPswd];
                                              
                                              [self.navigationController popViewControllerAnimated:YES];
                                          }];

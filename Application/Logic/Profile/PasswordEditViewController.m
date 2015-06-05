@@ -173,7 +173,11 @@
                                                  
                                                  [self showHUDWithText:@"操作成功" completion:^{
                                                      
-                                                     [AppManager instance].userNickName = oldPswdTxt.text;
+                                                     [AppManager instance].userPswd = pswdTxt.text;
+
+                                                     [[AppManager instance] updateUserData:[AppManager instance].userId
+                                                                                      pswd:[AppManager instance].userPswd];
+                                                     
                                                      [self.navigationController popViewControllerAnimated:YES];
                                                      
                                                  }];

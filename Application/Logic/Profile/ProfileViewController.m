@@ -98,8 +98,9 @@
             //Nothing.
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             //Nothing.
-            // imageView.image = image;
+            avator.image = image;
         }];
+        
         avator.layer.borderWidth = 2;
         avator.layer.borderColor = HEX_COLOR(@"0xffffff").CGColor;
         avator.layer.cornerRadius = avator.bounds.size.width/2;
@@ -460,9 +461,16 @@
 - (void)doSetting
 {
 
-    SettingViewController *settingVC = [[SettingViewController alloc] init];
-    self.navigationController.visibleViewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"个人中心" style:0 target:nil action:nil];
-    [self.navigationController pushViewController:settingVC animated:YES];
+    if ( ![@"" isEqualToString:[AppManager instance].userId] ) {
+        
+        // 已经登录
+        SettingViewController *settingVC = [[SettingViewController alloc] init];
+        self.navigationController.visibleViewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"个人中心" style:0 target:nil action:nil];
+        [self.navigationController pushViewController:settingVC animated:YES];
+    } else {
+        
+        [self showHUDWithText:@"请登录后，再操作。"];
+    }
 }
 
 - (void)doLoginOrRegist

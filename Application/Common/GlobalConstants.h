@@ -20,6 +20,7 @@ enum TRANS_SERVER_TY
 // URL
 #define HOST_URL                    @"http://bpotest.5adian.com/tiyandian_test/5aframework/src/init/index.php"
 #define WEB_URL                     @"http://bpotest.5adian.com/tiyandian_test/5aframework/src/init/webview/proinfo.php"
+#define UPLOAD_URL                  @"http://bpotest.5adian.com/tiyandian_test/5AdianV3/uploadimgforandroid.php"
 
 #define GET_METHOD                  @"GET"
 #define POST_METHOD                 @"POST"

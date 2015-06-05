@@ -312,9 +312,13 @@
         [btnComment setTitle:@"确定体验" forState:UIControlStateNormal];
         btnComment.enabled = NO;
         btnComment.alpha = 0.5;
-        
-        UIImageView *selIV = (UIImageView *)[btnSelBG viewWithTag:9];
+    }
+    
+    UIImageView *selIV = (UIImageView *)[btnSelBG viewWithTag:9];
+    if (selCount != [backDataArr count]) {
         selIV.image = [UIImage imageNamed:@"popUnSel.png"];
+    } else {
+        selIV.image = [UIImage imageNamed:@"popSeled.png"];
     }
 }
 

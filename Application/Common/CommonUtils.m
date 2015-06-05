@@ -510,6 +510,7 @@
             thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
         }
     }
+    
     UIGraphicsBeginImageContext(targetSize); // this will crop
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
@@ -588,26 +589,26 @@
     NSString* result;
     
     CCPReachability *eachability = [CCPReachability reachabilityWithHostName:@"http://www.baidu.com"];
-    NSLog(@" ====:%i",[eachability currentReachabilityStatus]);
+    NSLog(@" ====:%i", [eachability currentReachabilityStatus]);
     
     switch ([eachability currentReachabilityStatus]) {
             
         case NOReachable:
-            result =@"";
+            result = @"";
             break;
         case NotReachable:// 没有网络连接
-            result=@"没有网络连接";
+            result = @"没有网络连接";
             break;
         case ReachableViaWWAN:// 使用3G网络
-            result=@"3g";
+            result = @"3g";
             break;
         case ReachableViaWiFi:// 使用WiFi网络
-            result=@"wifi";
+            result = @"wifi";
             break;
     }
     
-    NSLog(@"caseReachableViaWWAN=%i",ReachableViaWWAN);
-    NSLog(@"caseReachableViaWiFi=%i",ReachableViaWiFi);
+    NSLog(@"caseReachableViaWWAN=%i", ReachableViaWWAN);
+    NSLog(@"caseReachableViaWiFi=%i", ReachableViaWiFi);
     
     return result;
 }
@@ -627,7 +628,7 @@
     
     for(int i=0; i<number; i++)
     {
-        strRandom = [ strRandom stringByAppendingFormat:@"%i",(arc4random() % 9)];
+        strRandom = [ strRandom stringByAppendingFormat:@"%i", (arc4random() % 9)];
     }
     
     return strRandom;
@@ -679,6 +680,38 @@
         return NO;
     
     return YES;
+}
+
+//压缩图片
++ (UIImage *)imageWithImageSimple:(UIImage *)image scaledToSize:(CGSize)newSize
+{
+    // Create a graphics image context
+    UIGraphicsBeginImageContext(newSize);
+    
+    // Tell the old image to draw in this new context, with the desired
+    // new size
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    
+    // Get the new image from the context
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // End the context
+    UIGraphicsEndImageContext();
+    
+    // Return the new image.
+    return newImage;
+}
+
+#pragma mark - 保存图片到document
++ (void)saveImage:(UIImage *)tempImage withName:(NSString *)imageName
+{
+    NSData* imageData = UIImagePNGRepresentation(tempImage);
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    // Now we get the full path to the file
+    NSString* fullPathToFile = [documentsDirectory stringByAppendingPathComponent:imageName];
+    // and then we write it out
+    [imageData writeToFile:fullPathToFile atomically:NO];
 }
 
 @end

@@ -54,6 +54,8 @@ static AppManager *shareInstance = nil;
         [AppManager instance].userNickName = [self nickNameRemembered];
         [AppManager instance].userImageUrl = [self avatorRemembered];
         [AppManager instance].userPoint = [self pointRemembered];
+        [AppManager instance].userMobile = [self mobileRemembered];
+        [AppManager instance].userPswd = [self pswdRemembered];
     } else {
         
         [AppManager instance].userId = @""; //@"L8SETw";
@@ -62,6 +64,8 @@ static AppManager *shareInstance = nil;
         [AppManager instance].customerName = CID_PARAM;
         [AppManager instance].userImageUrl = @"";
         [AppManager instance].userPoint = @"";
+        [AppManager instance].userMobile = @"";
+        [AppManager instance].userPswd = @"";
     }
 }
 
@@ -89,11 +93,23 @@ static AppManager *shareInstance = nil;
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"point"];
 }
 
+- (NSString *) mobileRemembered
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"mobile"];
+}
+
+- (NSString *) pswdRemembered
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"pswd"];
+}
+
 - (void)rememberUserData:(NSString *)aUserId
                 userName:(NSString *)aUserName
                 nickName:(NSString *)aNickName
                   avator:(NSString *)avator
                    point:(NSString *)aPoint
+                  mobile:(NSString *)aMobile
+                    pswd:(NSString *)aPswd
 {
     NSUserDefaults *_def = [NSUserDefaults standardUserDefaults];
     
@@ -104,6 +120,8 @@ static AppManager *shareInstance = nil;
         [_def removeObjectForKey:@"nickName"];
         [_def removeObjectForKey:@"avator"];
         [_def removeObjectForKey:@"point"];
+        [_def removeObjectForKey:@"mobile"];
+        [_def removeObjectForKey:@"pswd"];
     } else {
         
         [_def setObject:aUserId forKey:@"userId"];
@@ -111,10 +129,29 @@ static AppManager *shareInstance = nil;
         [_def setObject:aNickName forKey:@"nickName"];
         [_def setObject:avator forKey:@"avator"];
         [_def setObject:aPoint forKey:@"point"];
+        [_def setObject:aMobile forKey:@"mobile"];
+        [_def setObject:aPswd forKey:@"pswd"];
     }
     
     [_def synchronize];
 }
 
+- (void)updateUserData:(NSString *)aUserId
+                    pswd:(NSString *)aPswd
+{
+    NSUserDefaults *_def = [NSUserDefaults standardUserDefaults];
+    
+    if(userId == nil) {
+        
+        [_def removeObjectForKey:@"userId"];
+        [_def removeObjectForKey:@"pswd"];
+    } else {
+        
+        [_def setObject:aUserId forKey:@"userId"];
+        [_def setObject:aPswd forKey:@"pswd"];
+    }
+    
+    [_def synchronize];
+}
 
 @end

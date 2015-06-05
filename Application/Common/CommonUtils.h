@@ -77,6 +77,8 @@
 + (BOOL)isFileExitAtPath:(NSString*)aFilename;
 + (BOOL)isFileExitAtPath:(NSString *)fileName fileParentName:(NSString*)fileParentName;
 
++ (NSString *)dataFilePath:(NSString *)fileName;
+
 #pragma mark - get New type
 + (NSString*)getNetType;
 
@@ -93,5 +95,11 @@
 + (CGRect)sizeWithText:(NSString *)text withFont:(UIFont *)font size:(CGSize)size;
 
 + (BOOL)is7System;
+
+//压缩图片
++ (UIImage *)imageWithImageSimple:(UIImage *)image scaledToSize:(CGSize)newSize;
+
+#pragma mark - 保存图片到document
++ (void)saveImage:(UIImage *)tempImage withName:(NSString *)imageName;
 
 @end
