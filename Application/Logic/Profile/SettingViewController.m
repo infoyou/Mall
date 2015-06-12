@@ -559,7 +559,7 @@
                                                                           avator:[AppManager instance].userImageUrl
                                                                            point:[AppManager instance].userPoint
                                                                           mobile:[AppManager instance].userMobile
-                                                                            pswd:[AppManager instance].userMobile];
+                                                                            pswd:[AppManager instance].userPswd];
                                      }
                                  }
                              }];

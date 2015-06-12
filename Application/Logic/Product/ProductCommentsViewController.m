@@ -15,10 +15,9 @@
 @interface ProductCommentsViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *backCommentsArr;
-    NSMutableDictionary *backDic;
     UIView *backView;//蒙板view
     UIView *comments;//提交评论view
-
+    
     UITextView *goodsContentsText;//评论textview
     int goodsCommentsImgNumber;
 }
@@ -46,7 +45,7 @@
     self.navigationController.visibleViewController.navigationItem.title = @"商品评论";
     
     [self adjustView];
-   
+    
     [self loadCommentData];
 }
 
@@ -124,7 +123,7 @@
     productScore.textColor = HEX_COLOR(@"0x333333");
     
     for (int i=0; i<5; i++) {
-
+        
         UIButton *btnImg = [[UIButton alloc] initWithFrame:CGRectMake(productScore.frame.origin.x + (COMMENTSX + 1) *i, productScore.frame.origin.y +25, COMMENTSX, COMMENTSH)];
         [btnImg setBackgroundImage:[UIImage imageNamed:@"icon83.png"] forState:UIControlStateNormal];
         btnImg.tag = i+CommentNumber;
@@ -187,11 +186,7 @@
          [HttpRequestData dataWithDic:paramDict
                           requestType:POST_METHOD
                             serverUrl:HOST_URL
-                             andBlock:^(NSString*requestStr) {
-                                 
-                                 if (completionBlock) {
-                                     completionBlock();
-                                 }
+                             andBlock:^(NSString* requestStr) {
                                  
                                  if ([requestStr isEqualToString:@"Start"]) {
                                      
@@ -211,10 +206,24 @@
                                      
                                      if (backDic != nil) {
                                          
-                                         backCommentsArr = [[backDic valueForKey:@"data"] valueForKey:@"lists"];
-                                         NSLog(@"%d",backCommentsArr.count);
-                                         [self.productCommentsTable reloadData];
+                                         int total = [[[backDic valueForKey:@"data"] objectForKey:@"total"] intValue];
+                                         
+                                         if (total > 0) {
+
+                                             backCommentsArr = [[backDic valueForKey:@"data"] valueForKey:@"lists"];
+                                             NSLog(@"%d",backCommentsArr.count);
+                                             [self.productCommentsTable reloadData];
+                                         } else {
+                                             
+//                                             [self.navigationController popViewControllerAnimated:YES];
+                                             
+                                             [self showHUDWithText:@"暂无内容"];
+                                         }
                                      }
+                                 }
+                                 
+                                 if (completionBlock) {
+                                     completionBlock();
                                  }
                              }];
      }];
@@ -309,7 +318,7 @@
     UILabel *time = (UILabel *)[cell viewWithTag:14];
     
     if (contentH > 40) {
-
+        
         content.frame = CGRectMake(content.frame.origin.x, content.frame.origin.y, 270, contentH);
         iconView.frame = CGRectOffset(iconView.frame, 0, contentH-40);
         name.frame = CGRectOffset(name.frame, 0, contentH-40);
@@ -328,7 +337,7 @@
     NSString *imageUrl = [[backCommentsArr[indexPath.row] valueForKey:@"creator"] valueForKey:@"thumbnail_url"];
     
     if (imageUrl && imageUrl.length > 0) {
-
+        
         [iconView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:imageUrl] andPlaceholderImage:[UIImage imageNamed:@"placehold.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             //Nothing.
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -343,7 +352,7 @@
     iconView.layer.cornerRadius = iconView.bounds.size.width/2;
     
     if (indexPath != 0) {
-
+        
         UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
         [splitView setBackgroundColor:HEX_COLOR(@"0xd3d3d3")];
         [cell.contentView addSubview:splitView];

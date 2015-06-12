@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -18,20 +18,6 @@
                BuildableName = "Mall.app"
                BlueprintName = "Mall"
                ReferencedContainer = "container:Mall.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "08CD2C5F198F8D2800E7CC4F"
-               BuildableName = "ADianIPhone.app"
-               BlueprintName = "ADianIPhone"
-               ReferencedContainer = "container:ADianIPhone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -86,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "08CD2C5F198F8D2800E7CC4F"
-            BuildableName = "ADianIPhone.app"
-            BlueprintName = "ADianIPhone"
-            ReferencedContainer = "container:ADianIPhone.xcodeproj">
+            BuildableName = "Mall.app"
+            BlueprintName = "Mall"
+            ReferencedContainer = "container:Mall.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

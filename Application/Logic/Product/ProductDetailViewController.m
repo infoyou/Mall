@@ -135,6 +135,7 @@ typedef enum {
     
     [self loadProductData];
     [self loadCommentData];
+    
 }
 
 - (void)adjustView
@@ -173,7 +174,7 @@ typedef enum {
         
         [self showTimeAlert:@"提示:" message:@"您忘记评论或评分了!"];
     } else {
-        [self createComment];
+        [self doCreateComment];
     }
 }
 
@@ -1261,7 +1262,9 @@ typedef enum {
             
         case 5:
         {
+            // 评论列表
             NSLog(@"%@",backCommentArray[0]);
+            
             UITableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ProductCommentsCell" owner:self options:nil] lastObject];
             
             CGFloat contentH = [self getContentHeight:indexPath];
@@ -1345,7 +1348,7 @@ typedef enum {
 }
 
 #pragma mark - 添加商品评论
-- (void)createComment
+- (void)doCreateComment
 {
     if (![self isLogined]) {
         
@@ -1518,13 +1521,15 @@ typedef enum {
 //                                                 [backCommentArray removeAllObjects];
 //                                             }
                                              
-                                             NSMutableArray *commentDataArray =[[backDic valueForKey:@"data"] valueForKey:@"lists"];
+                                             NSMutableArray *commentDataArray = [[backDic valueForKey:@"data"] valueForKey:@"lists"];
                                              if ([[backDataArray valueForKey:@"comment_count"] isEqualToString:@"1"]) {
                                                  backCommentArray = commentDataArray[0];
                                                  
                                              } else {
                                                  backCommentArray = commentDataArray;
                                              }
+                                             
+                                             [self.mTableView reloadData];
                                          }
                                      }
                                  }
