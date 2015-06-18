@@ -94,7 +94,7 @@
         tabHeadView.contentView.backgroundColor = [UIColor clearColor];
         
         UIImageView *avator = (UIImageView *)[tabHeadView viewWithTag:10];
-        [avator sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:[AppManager instance].userImageUrl] andPlaceholderImage:[UIImage imageNamed:@"placehold.png"] options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        [avator sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:[AppManager instance].userImageUrl] andPlaceholderImage:[UIImage imageNamed:@"placehold.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             //Nothing.
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             //Nothing.
